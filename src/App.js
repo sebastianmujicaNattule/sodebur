@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
@@ -35,10 +35,10 @@ const ViewUnauthorized = React.lazy(() =>
   import(/* webpackChunkName: "views-error" */ './views/unauthorized')
 );
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    const direction = getDirection();
+const App = ({ locale }) => {
+  const direction = getDirection();
+  const currentAppLocale = AppLocale[locale];
+  useEffect(() => {
     if (direction.isRtl) {
       document.body.classList.add('rtl');
       document.body.classList.remove('ltr');
@@ -46,61 +46,56 @@ class App extends React.Component {
       document.body.classList.add('ltr');
       document.body.classList.remove('rtl');
     }
-  }
+  }, [direction]);
 
-  render() {
-    const { locale } = this.props;
-    const currentAppLocale = AppLocale[locale];
-
-    return (
-      <div className="h-100">
-        <IntlProvider
-          locale={currentAppLocale.locale}
-          messages={currentAppLocale.messages}
-        >
-          <>
-            <NotificationContainer />
-            {isMultiColorActive && <ColorSwitcher />}
-            <Suspense fallback={<div className="loading" />}>
-              <Router>
-                <Switch>
-                  <ProtectedRoute
-                    path={adminRoot}
-                    component={ViewApp}
-                    roles={[UserRole.Admin, UserRole.Editor]}
-                  />
-                  <Route
-                    path="/user"
-                    render={(props) => <ViewUser {...props} />}
-                  />
-                  <Route
-                    path="/error"
-                    exact
-                    render={(props) => <ViewError {...props} />}
-                  />
-                  <Route
-                    path="/unauthorized"
-                    exact
-                    render={(props) => <ViewUnauthorized {...props} />}
-                  />
-                  <Route
-                    path="/"
-                    exact
-                    render={(props) => <ViewHome {...props} />}
-                  />
-                  {/*
-                  <Redirect exact from="/" to={adminRoot} />
-                  */}
-                  <Redirect to="/error" />
-                </Switch>
-              </Router>
-            </Suspense>
-          </>
-        </IntlProvider>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="h-100">
+      <IntlProvider
+        locale={currentAppLocale.locale}
+        messages={currentAppLocale.messages}
+      >
+        <>
+          <NotificationContainer />
+          {isMultiColorActive && <ColorSwitcher />}
+          <Suspense fallback={<div className="loading" />}>
+            <Router>
+              <Switch>
+                <ProtectedRoute
+                  path={adminRoot}
+                  component={ViewApp}
+                  roles={[UserRole.Admin, UserRole.Editor]}
+                />
+                <Route
+                  path="/user"
+                  render={(props) => <ViewUser {...props} />}
+                />
+                <Route
+                  path="/error"
+                  exact
+                  render={(props) => <ViewError {...props} />}
+                />
+                <Route
+                  path="/unauthorized"
+                  exact
+                  render={(props) => <ViewUnauthorized {...props} />}
+                />
+                <Route
+                  path="/"
+                  exact
+                  render={(props) => <ViewHome {...props} />}
+                />
+                {/*
+                <Redirect exact from="/" to={adminRoot} />
+                */}
+                <Redirect to="/error" />
+              </Switch>
+            </Router>
+          </Suspense>
+        </>
+      </IntlProvider>
+    </div>
+  );
+};
 
 const mapStateToProps = ({ authUser, settings }) => {
   const { currentUser } = authUser;

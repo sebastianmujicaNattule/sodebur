@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 import { Formik, Form, Field } from 'formik';
 import { NotificationManager } from 'components/common/react-notifications';
 
-import { loginUser } from 'redux/actions';
 import { Colxx } from 'components/common/CustomBootstrap';
 import IntlMessages from 'helpers/IntlMessages';
+import { loginUser } from 'redux/actions';
 
 const validatePassword = (value) => {
   let error;

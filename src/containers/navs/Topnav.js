@@ -17,13 +17,6 @@ import { connect } from 'react-redux';
 
 import IntlMessages from 'helpers/IntlMessages';
 import {
-  setContainerClassnames,
-  clickOnMobileMenu,
-  logoutUser,
-  changeLocale,
-} from 'redux/actions';
-
-import {
   menuHiddenBreakpoint,
   searchPath,
   localeOptions,
@@ -31,9 +24,15 @@ import {
   buyUrl,
   adminRoot,
 } from 'constants/defaultValues';
-
 import { MobileMenuIcon, MenuIcon } from 'components/svg';
 import { getDirection, setDirection } from 'helpers/Utils';
+import {
+  setContainerClassnames,
+  clickOnMobileMenu,
+  logoutUser,
+  changeLocale,
+} from 'redux/actions';
+
 import TopnavEasyAccess from './Topnav.EasyAccess';
 import TopnavNotifications from './Topnav.Notifications';
 import TopnavDarkSwitch from './Topnav.DarkSwitch';
