@@ -55,13 +55,13 @@ const Login = ({ history, loading, error, loginUserAction }) => {
       <Colxx xxs="12" md="10" className="mx-auto my-auto">
         <Card className="auth-card">
           <div className="position-relative image-side ">
-            <p className="text-white h2">MAGIC IS IN THE DETAILS</p>
+            <p className="text-white h2">INICIAR SESION</p>
             <p className="white mb-0">
-              Please use your credentials to login.
+              Utilice sus credenciales para iniciar sesión
               <br />
-              If you are not a member, please{' '}
+              si no es miebro , por favor {' '}
               <NavLink to="/user/register" className="white">
-                register
+                registrse
               </NavLink>
               .
             </p>
