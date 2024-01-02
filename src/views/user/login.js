@@ -59,9 +59,9 @@ const Login = ({ history, loading, error, loginUserAction }) => {
             <p className="white mb-0">
               Utilice sus credenciales para iniciar sesión
               <br />
-              si no es miebro , por favor {' '}
+              si no es miembro , por favor {' '}
               <NavLink to="/user/register" className="white">
-                registrse
+                registrarse
               </NavLink>
               .
             </p>
@@ -109,8 +109,8 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                     )}
                   </FormGroup>
                   <div className="d-flex justify-content-between align-items-center">
-                    <NavLink to="/user/forgot-password">
-                      <IntlMessages id="user.forgot-password-question" />
+                    <NavLink to="/user/register">
+                      <IntlMessages id= "user.register"/>
                     </NavLink>
                     <Button
                       color="primary"
@@ -129,6 +129,13 @@ const Login = ({ history, loading, error, loginUserAction }) => {
                       </span>
                     </Button>
                   </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <NavLink to="/user/forgot-password">
+                      <IntlMessages id="user.forgot-password-question" />
+                    </NavLink>
+                  </div>
+
+
                 </Form>
               )}
             </Formik>

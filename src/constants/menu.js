@@ -2,6 +2,104 @@ import { adminRoot } from './defaultValues';
 
 const data = [
   {
+    id: 'inicio',
+    icon: 'simple-icon-home',
+    label: 'menu.home',
+    to: `${adminRoot}/dashboards`,
+    subs: [
+      {
+        icon: 'simple-icon-briefcase',
+        label: 'menu.default',
+        to: `${adminRoot}/dashboards/default`,
+        // roles: [UserRole.Admin],
+      },
+      {
+        icon: 'simple-icon-pie-chart',
+        label: 'menu.analytics',
+        to: `${adminRoot}/dashboards/analytics`,
+        // roles: [UserRole.Admin],
+      },
+      {
+        icon: 'simple-icon-basket-loaded',
+        label: 'menu.ecommerce',
+        to: `${adminRoot}/dashboards/ecommerce`,
+        // roles: [UserRole.Editor],
+      },
+      {
+        icon: 'simple-icon-doc',
+        label: 'menu.content',
+        to: `${adminRoot}/dashboards/content`,
+        // roles: [UserRole.Editor],
+      },
+    ],
+  },
+  {
+    id: 'mi-cuenta',
+    icon: 'simple-icon-user',
+    label: 'menu.mi-cuenta',
+    to: `${adminRoot}/dashboards`,
+    subs: [
+      {
+        icon: 'simple-icon-briefcase',
+        label: 'menu.default',
+        to: `${adminRoot}/dashboards/default`,
+        // roles: [UserRole.Admin],
+      },
+      {
+        icon: 'simple-icon-pie-chart',
+        label: 'menu.analytics',
+        to: `${adminRoot}/dashboards/analytics`,
+        // roles: [UserRole.Admin],
+      },
+      {
+        icon: 'simple-icon-basket-loaded',
+        label: 'menu.ecommerce',
+        to: `${adminRoot}/dashboards/ecommerce`,
+        // roles: [UserRole.Editor],
+      },
+      {
+        icon: 'simple-icon-doc',
+        label: 'menu.content',
+        to: `${adminRoot}/dashboards/content`,
+        // roles: [UserRole.Editor],
+      },
+    ],
+  },
+  {
+    id: 'repoblacion-y-calidad-de-vida',
+    icon: 'iconsminds-family-sign',
+    label: 'menu.repoblacion-y-calidad-de-vida',
+    to: `${adminRoot}/dashboards`,
+  },
+  {
+    id: 'desarrollo-empresarial',
+    icon: 'simple-icon-briefcase',
+    label: 'menu.desarrollo-empresarial',
+    to: `${adminRoot}/dashboards`,
+  },
+  {
+    id: 'transicion-verde',
+    icon: 'iconsminds-leafs',
+    label: 'menu.transicion-verde',
+    to: `${adminRoot}/dashboards`,
+  },
+  {
+    id: 'desarrollo-turistico',
+    icon: 'iconsminds-plane',
+    label: 'menu.desarrollo-turistico',
+    to: `${adminRoot}/dashboards`,
+  },
+  {
+    id: 'territorio-inteligente',
+    icon: 'iconsminds-remote-controll-2 ',
+    label: 'menu.territorio-inteligente',
+    to: `${adminRoot}/dashboards`,
+  },
+];
+/*
+
+const dataold = [
+  {
     id: 'dashboards',
     icon: 'iconsminds-shop-4',
     label: 'menu.dashboards',
@@ -388,5 +486,6 @@ const data = [
     to: 'https://gogo-react-docs.coloredstrategies.com/',
     newWindow: true,
   },
-];
+]; */
+
 export default data;
