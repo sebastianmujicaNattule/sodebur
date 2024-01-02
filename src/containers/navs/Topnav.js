@@ -15,13 +15,11 @@ import {
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import IntlMessages from 'helpers/IntlMessages';
 import {
   menuHiddenBreakpoint,
   searchPath,
   localeOptions,
   isDarkSwitchActive,
-  buyUrl,
   adminRoot,
 } from 'constants/defaultValues';
 import { MobileMenuIcon, MenuIcon } from 'components/svg';
@@ -262,15 +260,6 @@ const TopNav = ({
               })}
             </DropdownMenu>
           </UncontrolledDropdown>
-        </div>
-        <div className="position-relative d-none d-none d-lg-inline-block">
-          <a
-            className="btn btn-outline-primary btn-sm ml-2"
-            target="_top"
-            href={buyUrl}
-          >
-            <IntlMessages id="user.buy" />
-          </a>
         </div>
       </div>
       <NavLink className="navbar-logo" to={adminRoot}>

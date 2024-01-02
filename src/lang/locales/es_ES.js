@@ -44,12 +44,18 @@ module.exports = {
 
   /* 02.Inicio de sesión de usuario, cierre de sesión, registro */
   'user.login-title': 'Iniciar sesión',
-  'user.register': 'Registro',
+  'user.register': 'Registrate',
   'user.forgot-password': 'Se te olvidó tu contraseña',
   'user.email': 'Email',
   'user.password': 'Contraseña',
-  'user.forgot-password-question': '¿Contraseña olvidada?',
+  'user.password-confirm': 'Confirma contraseña',
+  'user.forgot-password-question': '¿Olvidaste tu contraseña?',
   'user.fullname': 'Nombre completo',
+  'user.fullname-under-text': 'Nombre publico que aparecera en tus publicaciones',
+  'user.fullname-under-text-2': 'Con el objetivo de garantizar el anonimato puede ser cualquier nombre',
+  'user.alias': 'Alias',
+  'user.alias-under-text': 'Tu Alias(nickname). No hace falta poner la @',
+  'user.alias-under-text-2': 'No hay que dejar espacios en blancos. No puede haber dos alias iguales',
   'user.login-button': 'INICIAR SESIÓN',
   'user.register-button': 'REGISTRO',
   'user.reset-password-button': 'REINICIAR',
@@ -60,6 +66,12 @@ module.exports = {
   'user.reset-password': 'Reset Password',
 
   /* 03.Menú */
+  'menu.transicion-verde': 'Transicion verde',
+  'menu.repoblacion-y-calidad-de-vida': 'Repoblacion y calidad de vida',
+  'menu.desarrollo-empresarial': 'Desarrollo empresarial',
+  'menu.desarrollo-turistico': 'Desarrollo turistico',
+  'menu.territorio-inteligente': 'Territorio Inteligente',
+  'menu.mi-cuenta': 'Mi cuenta',
   'menu.home': 'Inicio',
   'menu.app': 'Inicio',
   'menu.dashboards': 'Tableros',
