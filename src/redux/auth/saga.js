@@ -1,5 +1,6 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects';
 import { auth } from 'helpers/Firebase';
+import apiRequest  from 'helpers/apiHelper';
 import { adminRoot, currentUser } from 'constants/defaultValues';
 import { setCurrentUser } from 'helpers/Utils';
 import {
@@ -28,10 +29,10 @@ export function* watchLoginUser() {
 
 const loginWithEmailPasswordAsync = async (email, password) =>
   // eslint-disable-next-line no-return-await
-  await auth
-    .signInWithEmailAndPassword(email, password)
-    .then((user) => user)
-    .catch((error) => error);
+    await apiRequest({
+      api: 'RegisterUser',
+      props: { email , password }
+    });
 
 function* loginWithEmailPassword({ payload }) {
   const { email, password } = payload.user;
@@ -58,12 +59,13 @@ export function* watchRegisterUser() {
 
 const registerWithEmailPasswordAsync = async (email, password) =>
   // eslint-disable-next-line no-return-await
-  await auth
-    .createUserWithEmailAndPassword(email, password)
-    .then((user) => user)
-    .catch((error) => error);
+  await apiRequest({
+    api: 'RegisterUser',
+    props: { email , password }
+  }).catch((error) => error);
 
 function* registerWithEmailPassword({ payload }) {
+  console.log( payload )
   const { email, password } = payload.user;
   const { history } = payload;
   try {
