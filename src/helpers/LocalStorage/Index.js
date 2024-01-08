@@ -1,50 +1,48 @@
-class LocalStorage {
-  readLocal(key) {
-    if (!key) {
-      return null;
-    }
-
-    let value = window.sessionStorage.getItem(key)
-      ? window.localStorage.getItem(key)
-      : false;
-
-    if (value) {
-      try {
-        value = JSON.parse(value);
-      } catch (e) {}
-    }
-
-    return key;
+export function readLocal(key) {
+  if (!key) {
+    return null;
   }
 
-  setLocal(key, value, persistant = true) {
-    if (!key) {
-      return false;
-    }
+  let value = window.sessionStorage.getItem(key)
+    ? window.localStorage.getItem(key)
+    : false;
 
-    value = JSON.stringify(value);
-
-    if (persistant === true) {
-      window.localStorage.setItem(key, value);
-    } else {
-      window.sessionStorage.setItem(key, value);
-    }
-
-    return true;
+  if (value) {
+    try {
+      value = JSON.parse(value);
+    } catch (e) {}
   }
 
-  localRemove(key, persistant = true) {
-    if (persistant === true) {
-      window.localStorage.removeItem(key);
-    } else {
-      window.sessionStorage.removeItem(key);
-    }
+  return key;
+}
+
+export function setLocal(key, value, persistant = true) {
+  if (!key) {
+    return false;
   }
 
-  localClear() {
-    window.localStorage.clear();
-    window.sessionStorage.clear();
+  value = JSON.stringify(value);
+
+  if (persistant === true) {
+    window.localStorage.setItem(key, value);
+  } else {
+    window.sessionStorage.setItem(key, value);
+  }
+
+  return true;
+}
+
+export async function localRemove(key, persistant = true) {
+  if (persistant === true) {
+    window.localStorage.removeItem(key);
+  } else {
+    window.sessionStorage.removeItem(key);
   }
 }
 
-export default LocalStorage;
+export async function localClear() {
+  window.localStorage.clear();
+  window.sessionStorage.clear();
+}
+
+export default readLocal;
