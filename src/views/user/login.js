@@ -30,7 +30,7 @@ const validateEmail = (value) => {
   return error;
 };
 
-const Login = ({ history, loading, error, loginUserAction }) => {
+const Login = ({ loading, error }) => {
   const [email] = useState('demo@gogo.com');
   const [password] = useState('gogo123');
 
@@ -41,9 +41,10 @@ const Login = ({ history, loading, error, loginUserAction }) => {
   }, [error]);
 
   const onUserLogin = (values) => {
+    console.log(values);
     if (!loading) {
       if (values.email !== '' && values.password !== '') {
-        loginUserAction(values, history);
+        // loginUserAction(values, history);
       }
     }
   };

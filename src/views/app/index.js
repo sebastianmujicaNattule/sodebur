@@ -8,9 +8,13 @@ import AppLayout from 'layout/AppLayout';
 const Dashboards = React.lazy(() =>
   import(/* webpackChunkName: "dashboards" */ './dashboards')
 );
+const Sodebur = React.lazy(() =>
+  import(/* webpackChunkName: "sodebur" */ './sodebur')
+);
 const Pages = React.lazy(() =>
   import(/* webpackChunkName: "pages" */ './pages')
 );
+
 const Applications = React.lazy(() =>
   import(/* webpackChunkName: "applications" */ './applications')
 );
@@ -29,7 +33,7 @@ const App = ({ match }) => {
             <Redirect
               exact
               from={`${match.url}/`}
-              to={`${match.url}/dashboards`}
+              to={`${match.url}/sodebur`}
             />
             <Route
               path={`${match.url}/dashboards`}
@@ -59,6 +63,10 @@ const App = ({ match }) => {
             <Route
               path={`${match.url}/blank-page`}
               render={(props) => <BlankPage {...props} />}
+            />
+            <Route
+              path={`${match.url}/sodebur`}
+              render={(props) => <Sodebur {...props} />}
             />
             <Redirect to="/error" />
           </Switch>

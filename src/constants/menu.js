@@ -5,71 +5,73 @@ const data = [
     id: 'inicio',
     icon: 'simple-icon-home',
     label: 'menu.home',
-    to: `${adminRoot}/dashboards`,
-    subs: [
-      {
-        icon: 'simple-icon-briefcase',
-        label: 'menu.default',
-        to: `${adminRoot}/dashboards/default`,
-        // roles: [UserRole.Admin],
-      },
-      {
-        icon: 'simple-icon-pie-chart',
-        label: 'menu.analytics',
-        to: `${adminRoot}/dashboards/analytics`,
-        // roles: [UserRole.Admin],
-      },
-      {
-        icon: 'simple-icon-basket-loaded',
-        label: 'menu.ecommerce',
-        to: `${adminRoot}/dashboards/ecommerce`,
-        // roles: [UserRole.Editor],
-      },
-      {
-        icon: 'simple-icon-doc',
-        label: 'menu.content',
-        to: `${adminRoot}/dashboards/content`,
-        // roles: [UserRole.Editor],
-      },
-    ],
+    to: `${adminRoot}/sodebur/feed`,
   },
   {
     id: 'mi-cuenta',
     icon: 'simple-icon-user',
     label: 'menu.mi-cuenta',
-    to: `${adminRoot}/dashboards`,
+    to: `${adminRoot}/pages/profile/social`,
     subs: [
       {
-        icon: 'simple-icon-briefcase',
-        label: 'menu.default',
+        icon: 'simple-icon-user',
+        label: 'menu.mi-cuenta',
+        to: `${adminRoot}/pages/profile/social`,
+        // roles: [UserRole.Admin],
+        subs: [
+          {
+            icon: 'simple-icon-user',
+            label: 'menu.perfil',
+            to: `${adminRoot}/pages/profile/social`,
+            // roles: [UserRole.Admin],
+          },
+          {
+            icon: 'simple-icon-bell',
+            label: 'menu.notificaciones',
+            to: `${adminRoot}/dashboards/default`,
+            // roles: [UserRole.Admin],
+          },
+          {
+            icon: 'simple-icon-camrecorder',
+            label: 'menu.mis-reuniones',
+            to: `${adminRoot}/dashboards/default`,
+            // roles: [UserRole.Admin],
+          }
+        ]
+      },
+      {
+        icon: 'simple-icon-user',
+        label: 'menu.mi-cuenta',
         to: `${adminRoot}/dashboards/default`,
         // roles: [UserRole.Admin],
-      },
-      {
-        icon: 'simple-icon-pie-chart',
-        label: 'menu.analytics',
-        to: `${adminRoot}/dashboards/analytics`,
-        // roles: [UserRole.Admin],
-      },
-      {
-        icon: 'simple-icon-basket-loaded',
-        label: 'menu.ecommerce',
-        to: `${adminRoot}/dashboards/ecommerce`,
-        // roles: [UserRole.Editor],
-      },
-      {
-        icon: 'simple-icon-doc',
-        label: 'menu.content',
-        to: `${adminRoot}/dashboards/content`,
-        // roles: [UserRole.Editor],
-      },
+        subs: [
+          {
+            icon: 'simple-icon-settings',
+            label: 'menu.preferencias',
+            to: `${adminRoot}/dashboards/default`,
+            // roles: [UserRole.Admin],
+          },
+          {
+            icon: 'simple-icon-lock',
+            label: 'menu.autenticacion',
+            to: `${adminRoot}/dashboards/default`,
+            // roles: [UserRole.Admin],
+          },
+          {
+            icon: 'simple-icon-power',
+            label: 'menu.sign-out',
+            to: `${adminRoot}/dashboards/default`,
+            // roles: [UserRole.Admin],
+          },
+        ]
+      }
     ],
   },
   {
     id: 'repoblacion-y-calidad-de-vida',
     icon: 'iconsminds-family-sign',
     label: 'menu.repoblacion-y-calidad-de-vida',
-    to: `${adminRoot}/dashboards`,
+    to: `${adminRoot}/pages/blog/blog-list`,
   },
   {
     id: 'desarrollo-empresarial',
